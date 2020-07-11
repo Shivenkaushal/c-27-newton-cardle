@@ -1,3 +1,4 @@
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -67,16 +68,16 @@ textSize(15)
   text("for 1st ball press up arrow key ",700,100);
   
   fill("red");
-  text("for 2nd ball press enter key",700,80);
+  text("for 1st and 2nd  ball press enter key",700,80);
  
   fill("red");
-  text("for 3rd ball press down arrow key ",700,60);
+  text("for 1st,2nd and 3rd ball press down arrow key ",700,60);
   
   fill("red");
-  text("for 4th ball press space key",700,40);
+  text("for 1st,2nd 3rd and 4th ball press space key",700,40);
 
   fill("red");
-  text("for 5th ball press shift key",700,20);
+  text("for 1st,2nd 3rd 4th and 5th ball press shift key",700,20);
 }
 
 function keyPressed() {
@@ -89,24 +90,30 @@ function keyPressed() {
 	  if (keyCode === DOWN_ARROW) {
 
 		Matter.Body.applyForce(bobObject3.body,bobObject3.body.position,{x:-50,y:-45});
-	
+		Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
 	  }
 	   if (keyCode === ENTER) {
 
 		Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-50,y:-45});
-	
+		Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
 	  }
 
 	  if (keyCode ===32) {
 
 		Matter.Body.applyForce(bobObject4.body,bobObject4.body.position,{x:-50,y:-45});
-	
+		Matter.Body.applyForce(bobObject3.body,bobObject3.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
 	  }
 
 	  if (keyCode ===SHIFT) {
 
 		Matter.Body.applyForce(bobObject5.body,bobObject5.body.position,{x:-50,y:-45});
-	
+		Matter.Body.applyForce(bobObject4.body,bobObject4.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject3.body,bobObject3.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject2.body,bobObject2.body.position,{x:-50,y:-45});
+		Matter.Body.applyForce(bobObject1.body,bobObject1.body.position,{x:-50,y:-45});
 	  }
 
 
@@ -124,3 +131,4 @@ function drawLine(constraint)
 	roofBodyY=roofBodyPosition.y+roofBodyOffset.y
 	line(bobBodyPosition.x, bobBodyPosition.y, roofBodyX,roofBodyY);
 }
+
